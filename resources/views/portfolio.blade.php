@@ -114,9 +114,9 @@
                 <!-- Left - Image -->
                 <div data-aos="fade-right" class="text-center">
                     <div class="w-80 h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://via.placeholder.com/400x400/4F46E5/FFFFFF?text=Your+Photo" 
-                             alt="Your Name" 
-                             class="w-full h-full object-cover">
+                        <img src="{{ asset('images/anas2.jpeg') }}" 
+                            alt="Anas Bin Ikhlas" 
+                            class="w-full h-full object-cover">
                     </div>
                 </div>
                 
@@ -148,7 +148,7 @@
     <!-- 3. Skills Section -->
     <section id="skills" class="py-20 bg-gray-900 text-white overflow-hidden">
         <div class="container mx-auto px-6 mb-12">
-            <h2 class="text-4xl font-bold text-center mb-8" data-aos="fade-up">Skills & Technologies</h2>
+            <h2 class="text-6xl font-bold text-center mb-8" data-aos="fade-up">Skills</h2>
         </div>
         
         <!-- First scrolling line -->
@@ -181,7 +181,7 @@
     <!-- 4. Projects Section -->
     <section id="projects" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Featured Projects</h2>
+            <h2 class="text-6xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Featured Projects</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
@@ -268,7 +268,7 @@
     <!-- 5. Experience Section -->
     <section id="experience" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Work Experience</h2>
+            <h2 class="text-6xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Work Experience</h2>
             
             <div class="space-y-12">
                 <!-- Experience 1 -->
@@ -337,7 +337,7 @@
     <!-- 6. Education Section -->
     <section id="education" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Education</h2>
+            <h2 class="text-6xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Education</h2>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Education 1 -->
@@ -390,7 +390,7 @@
     <!-- 7. Certifications Section -->
     <section id="certifications" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Certifications</h2>
+            <h2 class="text-6xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">Certifications</h2>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Certification 1 -->
@@ -528,7 +528,7 @@
             </div>
             
             <div class="max-w-2xl mx-auto">
-                <form class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
                     <!-- Your Name -->
                     <div>
                         <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Your Name</label>
@@ -573,19 +573,19 @@
                 
                 <!-- Contact Info -->
                 <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="grid md:grid-cols-3 gap-8">
+                    <div class="grid md:grid-cols-2 gap-10">
                         <div>
                             <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-white text-xl">📧</span>
                             </div>
-                            <p class="text-gray-300">anas@example.com</p>
+                            <p class="text-gray-300">anasbinikhlas195@gmail.com</p>
                         </div>
-                        <div>
+                        <!-- <div>
                             <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-white text-xl">📱</span>
                             </div>
                             <p class="text-gray-300">+92 XXX XXXXXXX</p>
-                        </div>
+                        </div> -->
                         <div>
                             <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-white text-xl">📍</span>
@@ -603,9 +603,9 @@
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2024 Anas Bin Ikhlas. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                <a href="https://www.linkedin.com/in/anas-bin-ikhlas-8b9279146" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com/anasbinikhlas" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                <a href="https://x.com/Anasbinikhlas" class="text-gray-400 hover:text-white transition-colors">X</a>
             </div>
         </div>
     </footer>
