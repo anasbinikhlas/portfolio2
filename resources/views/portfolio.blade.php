@@ -36,6 +36,37 @@
             font-size: clamp(4rem, 15vw, 12rem);
             line-height: 0.8;
         }
+
+        .go-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .go-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .go-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -82,6 +113,11 @@
         <a href="#education" @click="open = false" class="hover:text-blue-600 transition-colors">Education</a>
         <a href="#certifications" @click="open = false" class="hover:text-blue-600 transition-colors">Certifications</a>
         <a href="#contact" @click="open = false" class="hover:text-blue-600 transition-colors">Contact</a>
+    </div>
+
+    <!-- Go to Top Button -->
+    <div id="goToTop" class="go-to-top" onclick="scrollToTop()">
+        ↑
     </div>
 
     <!-- 1. Landing Section -->
@@ -397,70 +433,6 @@
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-500" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-blue-600 text-2xl font-bold">AWS</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900">AWS Certified Solutions Architect</h3>
-                            <p class="text-blue-600 font-semibold">Amazon Web Services</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-500 mb-2">Issued: March 2023</p>
-                    <p class="text-gray-600">Professional level certification demonstrating expertise in designing distributed applications on AWS.</p>
-                </div>
-                
-                <!-- Certification 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-green-600 text-2xl font-bold">GCP</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900">Google Cloud Professional Developer</h3>
-                            <p class="text-green-600 font-semibold">Google Cloud</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-500 mb-2">Issued: August 2022</p>
-                    <p class="text-gray-600">Certified in developing scalable and highly available applications on Google Cloud Platform.</p>
-                </div>
-                
-                <!-- Certification 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-purple-500" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-purple-600 text-xl font-bold">Meta</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900">Meta Front-End Developer</h3>
-                            <p class="text-purple-600 font-semibold">Meta (Facebook)</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-500 mb-2">Issued: January 2023</p>
-                    <p class="text-gray-600">Professional certificate in React, JavaScript, and modern front-end development practices.</p>
-                </div>
-                
-                <!-- Certification 4 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-500" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mr-4">
-                            <span class="text-red-600 text-xl font-bold">OCI</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900">Oracle Cloud Infrastructure Developer</h3>
-                            <p class="text-red-600 font-semibold">Oracle</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-500 mb-2">Issued: November 2022</p>
-                    <p class="text-gray-600">Advanced certification in Oracle Cloud Infrastructure development and deployment strategies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="grid md:grid-cols-2 gap-8">
-                <!-- Certification 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-500" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                             <span class="text-blue-600 text-2xl font-bold">PHP</span>
                         </div>
                         <div>
@@ -473,7 +445,7 @@
                     <p class="text-gray-600">Professional certification in PHP programming and CodeIgniter MVC framework development with hands-on project experience.</p>
                 </div>
                 
-                <!-- Placeholder Certification 2 -->
+                <!-- Certification 2 -->
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
@@ -488,7 +460,7 @@
                     <p class="text-gray-600">Advanced Node.js development with Express.js, database integration, and API development best practices.</p>
                 </div>
                 
-                <!-- Placeholder Certification 3 -->
+                <!-- Certification 3 -->
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-purple-500" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
@@ -503,7 +475,7 @@
                     <p class="text-gray-600">Advanced React.js concepts including hooks, context, state management, and modern development patterns.</p>
                 </div>
                 
-                <!-- Placeholder Certification 4 -->
+                <!-- Certification 4 -->
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-500" data-aos="fade-up" data-aos-delay="400">
                     <div class="flex items-center mb-6">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mr-4">
@@ -518,6 +490,8 @@
                     <p class="text-gray-600">Foundational understanding of AWS cloud services, architecture, and deployment strategies for scalable applications.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
     <!-- 8. Contact Section -->
     <section id="contact" class="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
@@ -528,7 +502,7 @@
             </div>
             
             <div class="max-w-2xl mx-auto">
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+                <form action="mailto:anasbinikhlas195@gmail.com" method="POST" enctype="text/plain" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
                     <!-- Your Name -->
                     <div>
                         <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Your Name</label>
@@ -580,12 +554,6 @@
                             </div>
                             <p class="text-gray-300">anasbinikhlas195@gmail.com</p>
                         </div>
-                        <!-- <div>
-                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-white text-xl">📱</span>
-                            </div>
-                            <p class="text-gray-300">+92 XXX XXXXXXX</p>
-                        </div> -->
                         <div>
                             <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-white text-xl">📍</span>
@@ -616,4 +584,21 @@
             once: true,
             offset: 100
         });
+
+        // Go to Top Button functionality
+        window.addEventListener('scroll', function() {
+            const goToTopButton = document.getElementById('goToTop');
+            if (window.pageYOffset > 300) {
+                goToTopButton.classList.add('show');
+            } else {
+                goToTopButton.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
